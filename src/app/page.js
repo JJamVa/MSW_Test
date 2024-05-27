@@ -2,7 +2,7 @@
 
 export default function Home() {
   const submit = async () => {
-    const data = await fetch("http://www.test.com/test", {
+    const data = await fetch("http://www.jjamva.com", {
       method: "get",
     }).then((res) => {
       return res.json();

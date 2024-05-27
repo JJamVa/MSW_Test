@@ -1,5 +1,5 @@
 import "./globals.css";
-import { MswComponent } from "@/_component/msw.component";
+import { MswComponent } from "@/_component/mswComponent";
 
 export default function RootLayout({ children }) {
   return (
