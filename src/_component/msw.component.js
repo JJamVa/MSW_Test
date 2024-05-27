@@ -1,23 +1,17 @@
 "use client";
 
+import initMockAPI from "@/mocks";
 import { useEffect } from "react";
 
-export const MswComponent = () => {
+export const MswComponent = ({ children }) => {
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
-      if (typeof window === "undefined") {
-        (async () => {
-          const { server } = await import("@/mocks/server");
-          server.listen();
-        })();
-      } else {
-        (async () => {
-          const { worker } = await import("@/mocks/worker");
-          worker.start();
-        })();
+    async function InitMSW() {
+      if (process.env.NODE_ENV === "development") {
+        initMockAPI();
       }
     }
-  });
+    InitMSW();
+  }, []);
 
-  return null;
+  return <>{children}</>;
 };

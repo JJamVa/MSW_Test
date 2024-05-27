@@ -11,9 +11,5 @@ export default function Home() {
     console.log(data);
   };
 
-  return (
-    <>
-      <button onClick={submit}>MSW 테스트</button>
-    </>
-  );
+  return <button onClick={submit}>MSW 테스트</button>;
 }
