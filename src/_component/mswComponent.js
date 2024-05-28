@@ -7,7 +7,7 @@ export const MswComponent = ({ children }) => {
   useEffect(() => {
     async function InitMSW() {
       if (process.env.NODE_ENV === "development") {
-        initMockAPI();
+        await initMockAPI();
       }
     }
     InitMSW();
